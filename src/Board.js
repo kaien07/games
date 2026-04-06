@@ -1,4 +1,5 @@
 import React from 'react';
+import './Board.css'
 
 export function TicTacToeBoard({ ctx, G, moves }) {
     const onClick = (id) => moves.clickCell(id);
@@ -13,21 +14,6 @@ export function TicTacToeBoard({ ctx, G, moves }) {
         };
     };
 
-    const cellStyle = {
-        border: '1px solid #555',
-        width: '100px',
-        height: '100px',
-        lineHeight: '100px',
-        textAlign: 'center',
-    };
-
-    const centeredStyle = {
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        minHeight: '100vh',
-    };
-
     let tbody = [];
     for (let i = 0; i < 3; i++) {
         let cells = [];
@@ -36,14 +22,14 @@ export function TicTacToeBoard({ ctx, G, moves }) {
             if (G.cells[id] !== null) {
                 cells.push(
                     <td key={ id }>
-                    <div style={ cellStyle }>{ G.cells[id] }</div>
+                    <div class="cellStyle">{ G.cells[id] }</div>
                     </td>
                 );
             }
             else {
                 cells.push(
                     <td key={ id }>
-                    <button style={ cellStyle } onClick={ () => onClick(id) } />
+                    <button class="cellStyle" onClick={ () => onClick(id) } />
                     </td>
                 )
             };
@@ -53,8 +39,8 @@ export function TicTacToeBoard({ ctx, G, moves }) {
 
     return (
         <div>
-            { winner } 
-            <table id="board" style={ centeredStyle }>
+            <h1 class="winnerStyle">{ winner }</h1> 
+            <table id="board">
                 <tbody>{ tbody }</tbody>
             </table>
         </div>

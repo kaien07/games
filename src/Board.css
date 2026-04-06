@@ -1,0 +1,20 @@
+.cellStyle {
+    border: 1px solid #555;
+    width: 100px;
+    height: 100px;
+    line-height: 100px;
+    text-align: center;
+}
+
+#board {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.winnerStyle {
+    position: fixed;
+    margin: 10px;
+}
+
